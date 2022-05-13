@@ -18,6 +18,7 @@ class Game {
 
     // Update Functions
     void updateSFMLEvents();
+    void updatePlayer();
     void update();
 
     // Render Functions
