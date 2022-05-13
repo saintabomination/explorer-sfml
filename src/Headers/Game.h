@@ -2,14 +2,20 @@
 #define GAME_H
 
 #include "../Headers.h"
+#include "Player.h"
+#include "TextureManager.h"
 
 class Game {
   private:
     sf::RenderWindow* window;
     sf::Event sfEvent;
+    TextureManager textureManager;
+    Player player;
 
     // Initialisers
     void initWindow();
+    void initTextures();
+    void initPlayer();
 
   public:
     // Constructor and Destructor
@@ -22,6 +28,7 @@ class Game {
     void update();
 
     // Render Functions
+    void renderPlayer();
     void render();
 
     // Functions

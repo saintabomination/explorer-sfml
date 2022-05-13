@@ -7,12 +7,12 @@ class Player {
   private:
     sf::Sprite sprite;
 
-    // Initialisers
-    void initSprite();
-
   public:
     // Constructor
     Player();
+
+    // Modifiers
+    void setTexture(sf::Texture& texture);
 
     // Functions
     void update();

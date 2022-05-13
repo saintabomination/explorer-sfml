@@ -1,10 +1,17 @@
 #include "../Headers/Player.h"
 
-// Initialisers
+// Constructor
 
-void Player::initSprite()
+Player::Player()
 {
 
+}
+
+// Modifiers
+
+void Player::setTexture(sf::Texture& texture)
+{
+  this->sprite.setTexture(texture);
 }
 
 // Functions

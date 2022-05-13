@@ -5,6 +5,9 @@
 #include <SFML/Graphics.hpp>
 
 // Other
+#include <vector>
+#include <map>
+#include <string>
 #include <iostream>
 
 #endif // HEADERS_H
