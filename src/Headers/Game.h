@@ -32,6 +32,7 @@ class Game {
     // Update Functions
     void updateSFMLEvents();
     void updateDt();
+    void updateKeys();
     void updatePlayer();
     void update();
 

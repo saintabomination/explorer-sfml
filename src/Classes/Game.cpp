@@ -63,6 +63,19 @@ void Game::updateDt()
   this->dt = this->dtClock.restart().asSeconds();
 }
 
+void Game::updateKeys()
+{
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+    std::cout << "W\n";
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+    std::cout << "S\n";
+
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+    std::cout << "A\n";
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+    std::cout << "D\n";
+}
+
 void Game::updatePlayer()
 {
   this->player.update();
@@ -72,6 +85,7 @@ void Game::update()
 {
   this->updateSFMLEvents();
   this->updateDt();
+  this->updateKeys();
   this->updatePlayer();
 }
 
