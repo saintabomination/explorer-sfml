@@ -4,7 +4,7 @@
 
 void Game::initWindow()
 {
-  this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "SFML");
+  this->window = new sf::RenderWindow(sf::VideoMode(640, 640), "SFML");
   this->window->setFramerateLimit(60);
   this->window->setVerticalSyncEnabled(false);
 }
@@ -66,14 +66,14 @@ void Game::updateDt()
 void Game::updateKeys()
 {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-    std::cout << "W\n";
+    this->player.move(sf::Vector2f(0.f, -1.f));
   else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-    std::cout << "S\n";
+    this->player.move(sf::Vector2f(0.f, 1.f));
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-    std::cout << "A\n";
+    this->player.move(sf::Vector2f(-1.f, 0.f));
   else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-    std::cout << "D\n";
+    this->player.move(sf::Vector2f(1.f, 0.f));
 }
 
 void Game::updatePlayer()

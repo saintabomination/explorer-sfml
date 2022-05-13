@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "../Headers.h"
+#include "../Constants.h"
 
 class Player {
   private:
@@ -17,6 +18,7 @@ class Player {
     // Functions
     void update();
     void render(sf::RenderTarget& target);
+    void move(sf::Vector2f movementVector);
 };
 
 #endif // PLAYER_H
