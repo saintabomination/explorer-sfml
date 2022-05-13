@@ -12,6 +12,10 @@ class Game {
     TextureManager textureManager;
     Player player;
 
+    // Delta Time
+    sf::Clock dtClock;
+    float dt;
+
     // Initialisers
     void initWindow();
     void initTextures();
@@ -22,8 +26,12 @@ class Game {
     Game();
     virtual ~Game();
 
+    // Accessors
+    const float getDt() const;
+
     // Update Functions
     void updateSFMLEvents();
+    void updateDt();
     void updatePlayer();
     void update();
 

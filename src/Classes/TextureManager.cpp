@@ -7,7 +7,7 @@ void TextureManager::addTexture(std::string name, std::string path)
   sf::Texture* texture = new sf::Texture();
   if (!texture->loadFromFile(path))
   {
-    std::cout << "ERROR::TEXTURE_MANAGER::CANT_LOAD_TEXXTURE_FILE\n";
+    std::cout << "ERROR::TEXTURE_MANAGER::CANT_LOAD_TEXTURE_FILE\n";
     return;
   }
   this->textures.insert(std::pair<std::string, sf::Texture*>(name, texture));
