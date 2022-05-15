@@ -10,6 +10,7 @@ void TextureManager::addTexture(std::string name, std::string path)
     std::cout << "ERROR::TEXTURE_MANAGER::CANT_LOAD_TEXTURE_FILE\n";
     return;
   }
+  texture->setRepeated(true);
   this->textures.insert(std::pair<std::string, sf::Texture*>(name, texture));
 }
 

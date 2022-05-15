@@ -4,12 +4,14 @@
 #include "../Headers.h"
 #include "Player.h"
 #include "TextureManager.h"
+#include "BackgroundRect.h"
 
 class Game {
   private:
     sf::RenderWindow* window;
     sf::Event sfEvent;
     TextureManager textureManager;
+    std::vector<BackgroundRect> backgroundRects;
     Player player;
 
     // Delta Time
@@ -23,6 +25,7 @@ class Game {
     // Initialisers
     void initWindow();
     void initTextures();
+    void initBackgroundRects();
     void initPlayer();
 
   public:
@@ -41,6 +44,7 @@ class Game {
     void update();
 
     // Render Functions
+    void renderBackgroundRects();
     void renderPlayer();
     void render();
 

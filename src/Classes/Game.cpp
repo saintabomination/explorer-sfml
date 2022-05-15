@@ -12,6 +12,17 @@ void Game::initWindow()
 void Game::initTextures()
 {
   this->textureManager.addTexture("player", "src/Assets/Textures/Player.png");
+  this->textureManager.addTexture("sand", "src/Assets/Textures/Sand.png");
+}
+
+void Game::initBackgroundRects()
+{
+  this->backgroundRects.push_back(
+    BackgroundRect(
+      sf::Vector2f(640.f, 640.f),
+      this->textureManager.getTexture("sand")
+    )
+  );
 }
 
 void Game::initPlayer()
@@ -25,6 +36,7 @@ Game::Game()
 {
   this->initWindow();
   this->initTextures();
+  this->initBackgroundRects();
   this->initPlayer();
 }
 
@@ -106,6 +118,11 @@ void Game::update()
 
 // Render Functions
 
+void Game::renderBackgroundRects()
+{
+  for (BackgroundRect backgroundRect : this->backgroundRects) backgroundRect.render(*this->window);
+}
+
 void Game::renderPlayer()
 {
   this->player.render(*this->window);
@@ -114,6 +131,7 @@ void Game::renderPlayer()
 void Game::render()
 {
   this->window->clear();
+  this->renderBackgroundRects();
   this->renderPlayer();
   this->window->display();
 }
