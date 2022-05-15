@@ -14,7 +14,11 @@ class Game {
 
     // Delta Time
     sf::Clock dtClock;
-    float dt;
+    float dtTimer;
+
+    // Movement Timing
+    sf::Clock movementClock;
+    float movementTimer;
 
     // Initialisers
     void initWindow();
@@ -31,7 +35,7 @@ class Game {
 
     // Update Functions
     void updateSFMLEvents();
-    void updateDt();
+    void updateClocks();
     void updateKeys();
     void updatePlayer();
     void update();
